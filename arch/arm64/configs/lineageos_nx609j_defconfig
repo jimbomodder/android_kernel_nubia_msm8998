@@ -775,3 +775,6 @@ CONFIG_WLAN_FEATURE_DISA=y
 # CONFIG_WLAN_FEATURE_SARV1_TO_SARV2 is not set
 # CONFIG_GOLDFISH is not set
 # CONFIG_CHROME_PLATFORMS is not set
+
+# Enable BFQ ioscheduler -- Add by Cyborg2017(Cyborg Yang) [20190903]
+CONFIG_IOSCHED_BFQ=y
