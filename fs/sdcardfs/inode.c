@@ -21,7 +21,7 @@
 #include "sdcardfs.h"
 #include <linux/fs_struct.h>
 #include <linux/ratelimit.h>
-
+#include <linux/sched.h>
 //Nubia FileObserver Begin
 #ifdef ENABLE_FILE_OBSERVER
 #include "observer.h"
