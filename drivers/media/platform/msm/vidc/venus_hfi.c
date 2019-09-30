@@ -3408,8 +3408,6 @@ static void __process_sys_error(struct venus_hfi_device *device)
 {
 	struct hfi_sfr_struct *vsfr = NULL;
 
-	__set_state(device, VENUS_STATE_DEINIT);
-
 	/* Once SYS_ERROR received from HW, it is safe to halt the AXI.
 	 * With SYS_ERROR, Venus FW may have crashed and HW might be
 	 * active and causing unnecessary transactions. Hence it is
@@ -3656,6 +3654,7 @@ static int __response_handler(struct venus_hfi_device *device)
 					"Too many packets in message queue to handle at once, deferring read\n");
 			break;
 		}
+
 		/* do not read packets after sys error packet */
 		if (info->response_type == HAL_SYS_ERROR)
 			break;
